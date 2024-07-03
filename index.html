@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es" data-Dark>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios DOM</title>
+    <!--hamburguers CSS-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
+    />
+    <link rel="stylesheet" href="../../normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/scroll_spy.css" />
+  </head>
+
+  <body id="body">
+    <header>
+      <h1>Ejercicios del DOM</h1>
+    </header>
+
+    <!--Is online: posición en FIXED-->
+    <p id="isOnline" style="display: none"></p>
+
+    <!--Menú hamburguesa: posición en FIXED (no afecta al documento)-->
+    <button class="panel-btn hamburger hamburger--spin" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <!--Ir arriba: posición en FIXED-->
+    <div id="top-btn">🔝</div>
+
+    <!--Dark Mode: posición en FIXED-->
+    <button id="darkMode-btn"></button>
+
+    <!--Menú para dispositivos: posición en FIXED-->
+    <aside class="panel">
+      <ul class="menu">
+        <li>
+          <a href="#section1">Reloj digital y alarma</a>
+          <a href="#section2">Eventos del teclado</a>
+          <a href="#section3">Cuenta atras</a>
+          <a href="#section4">Responsive maps & Youtube video</a>
+          <a href="#section5">Responsive tester</a>
+          <a href="#section6">Detección de dispositivos (User Agent)</a>
+          <a href="#section7">Verificación de conexión</a>
+          <a href="#section8">Detección de la cámara</a>
+          <a href="#section9">Geolocalización</a>
+          <a href="#section10">Filtro de búsqueda</a>
+          <a href="#section11">Sorteo</a>
+          <a href="#section12">Carrusel de imágenes</a>
+          <a href="#section13">Audio/video Focus</a>
+          <a href="#section14">Text Speech</a>
+        </li>
+      </ul>
+    </aside>
+
+    <main>
+      <section id="section1" class="section" data-Dark>
+        <h2>Reloj digital y alarma</h2>
+        <div>
+          <h1 id="clock"></h1>
+        </div>
+        <button class="btnS1" id="start-time">Show Clock</button>
+        <button class="btnS1" id="stop-time">Hidde Clock</button>
+        <button class="btnS1" id="start-alarm">Start Alarm</button>
+        <button class="btnS1" id="stop-alarm">Stop Alarm</button>
+        <audio id="play" src="./assets/Alarm-ringtone.mp3"></audio>
+      </section>
+
+      <section id="section2" class="section" data-Dark="">
+        <h2>Eventos del teclado</h2>
+        <section id="stage">
+          <div id="ball"></div>
+        </section>
+      </section>
+
+      <section id="section3" class="section" data-Dark>
+        <h2>Cuenta atrás</h2>
+        <div id="countdown-container">
+          <p id="final-date"></p>
+          <p id="countdown"></p>
+        </div>
+        <button id="show-countdown">Mostrar</button>
+        <button id="hidde-countdown">Ocultar</button>
+      </section>
+
+      <section id="section4" class="section"></section>
+
+      <section id="section5" class="section">
+        <h2>Responsive tester</h2>
+        <form id="responsive-tester">
+          <input type="url" name="direccion" placeholder="URL" required />
+          <br />
+          <input type="text" name="ancho" placeholder="Ancho" required />
+          <br />
+          <input type="text" name="alto" placeholder="Alto" required />
+          <br />
+          <input name="probar" type="submit" value="Probar" />
+          <input name="cerrar" type="button" value="Cerrar" />
+        </form>
+      </section>
+
+      <section id="section6" class="section">
+        <h2>
+          Detección de dispositivos <br />
+          (User Agent)
+        </h2>
+        <div id="user-device"></div>
+      </section>
+
+      <section id="section7" class="section">
+        <h2>Verificación de conexión</h2>
+      </section>
+
+      <section id="section8" class="section">
+        <h2>Detección de la cámara</h2>
+        <video id="webcam"></video>
+      </section>
+
+      <section id="section9" class="section">
+        <h2>geolocalización</h2>
+
+        <div id="geoLocation"></div>
+      </section>
+
+      <section id="section10" class="section">
+        <h2>Filtro de búsqueda</h2>
+
+        <input type="search" name="q" id="searchbarSection10" />
+
+        <div id="categoriesContainer">
+          <div class="categorieImage">
+            <img
+              src="https://picsum.photos/200/300/?blur=1"
+              alt="random blur image"
+            />
+            <figcaption class="figCaption blur">Blur</figcaption>
+          </div>
+
+          <div class="categorieImage">
+            <img
+              src="https://picsum.photos/200/300/?grayscale"
+              alt="random grayscale image"
+            />
+            <figcaption class="figCaption grayscale">Grayscale</figcaption>
+          </div>
+
+          <div class="categorieImage">
+            <img
+              src="https://picsum.photos/200/300/?blur=1"
+              alt="random blur image"
+            />
+            <figcaption class="figCaption blur">Blur</figcaption>
+          </div>
+
+          <div class="categorieImage">
+            <img
+              src="https://picsum.photos/200/300/?grayscale"
+              alt="random grayscale image"
+            />
+            <figcaption class="figCaption grayscale">Grayscale</figcaption>
+          </div>
+
+          <div class="categorieImage">
+            <img
+              src="https://picsum.photos/200/300/?blur=1"
+              alt="random blur image"
+            />
+            <figcaption class="figCaption blur">Blur</figcaption>
+          </div>
+
+          <div class="categorieImage">
+            <img
+              src="https://picsum.photos/200/300/?grayscale"
+              alt="random grayscale image"
+            />
+            <figcaption class="figCaption grayscale">Grayscale</figcaption>
+          </div>
+        </div>
+      </section>
+
+      <section id="section11" class="section">
+        <h2>Sorteo</h2>
+        <div id="lotteryItems"></div>
+        <button id="lotteryButton">Elegir ganador</button>
+      </section>
+
+      <section id="section12" class="section">
+        <h2>Carrusel de imágenes</h2>
+        <div id="section12-mainContainer">
+          <div class="imgSliderBtn left">➡️</div>
+          <div class="imgSliderBtn right">⬅️</div>
+          <img src="assets/carrusel/1.jpg" alt="img 1" class="img-slider" />
+          <img
+            src="assets/carrusel/2.jpg"
+            alt="img 2"
+            class="img-slider hidde"
+          />
+          <img
+            src="assets/carrusel/3.jpg"
+            alt="img 3"
+            class="img-slider hidde"
+          />
+          <img
+            src="assets/carrusel/4.jpg"
+            alt="img 4"
+            class="img-slider hidde"
+          />
+          <img
+            src="assets/carrusel/5.jpg"
+            alt="img 5"
+            class="img-slider hidde"
+          />
+          <img
+            src="assets/carrusel/6.jpg"
+            alt="img 6"
+            class="img-slider hidde"
+          />
+          <img
+            src="assets/carrusel/7.jpg"
+            alt="img 7"
+            class="img-slider hidde"
+          />
+          <img
+            src="assets/carrusel/8.jpg"
+            alt="img 8"
+            class="img-slider hidde"
+          />
+          <img
+            src="assets/carrusel/9.jpg"
+            alt="img 9"
+            class="img-slider hidde"
+          />
+          <img
+            src="assets/carrusel/10.jpg"
+            alt="img 10"
+            class="img-slider hidde"
+          />
+        </div>
+      </section>
+
+      <section id="section13" class="section">
+        <h2>Audio/video focus</h2>
+        <audio controls src="./assets/song1.mp3"></audio>
+      </section>
+
+      <section id="section14" class="section">
+        <h2>Text Speech</h2>
+        <select name="select_language" id="select_language"></select>
+
+        <textarea
+          name="section14Text"
+          id="section14Text"
+          cols="40"
+          rows="20"
+        ></textarea>
+
+        <button type="submit" id="section14Btn">Enviar</button>
+      </section>
+    </main>
+
+    <div id="aside-panel">
+      <ul class="menu" id="aside-menu">
+        <li>
+          <a data-menu="section1" href="#section1">Reloj digital y alarma</a>
+          <a data-menu="section2" href="#section2">Eventos del teclado</a>
+          <a data-menu="section3" href="#section3">Cuenta atras</a>
+          <a data-menu="section4" href="#section4"
+            >Responsive maps & Youtube video</a
+          >
+          <a data-menu="section5" href="#section5">Responsive tester</a>
+          <a data-menu="section6" href="#section6"
+            >Detección de dispositivos (User Agent)</a
+          >
+          <a data-menu="section7" href="#section7">Verificación de conexión</a>
+          <a data-menu="section8" href="#section8">Detección de la cámara</a>
+          <a data-menu="section9" href="#section9">Geolocalización</a>
+          <a data-menu="section10" href="#section10">Filtro de búsqueda</a>
+          <a data-menu="section11" href="#section11">Sorteo</a>
+          <a data-menu="section12" href="#section12">Carrusel de imágenes</a>
+          <a data-menu="section13" href="#section13">Video focus</a>
+          <a data-menu="section14" href="#section14">Text Speech</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script src="js/index.js" type="module"></script>
+</html>

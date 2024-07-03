@@ -1,0 +1,361 @@
+@font-face {
+  font-family: "14SegmentLED";
+  src: url("14\ Segment\ LED\ Regular.ttf") format("ttf");
+}
+
+/*********************RESETEO GLOBAL*********************************/
+
+:root {
+  --main-font: sans-serif;
+  --font-size: 16px;
+  --main-color: #f7df1e;
+  --second-color: #222;
+  --main-modal-color: rgba(247, 222, 30, 0.55);
+  --second-modal-color: rgba(34, 34, 34, 0.85);
+  --container-width: 1200px;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*::after {
+  box-sizing: inherit; /*Heredado de html (border-box)*/
+}
+
+body {
+  overflow-x: hidden; /*no mostrar el scroll horizontal*/
+  font-size: 1.1rem;
+}
+img {
+  max-width: 100%;
+  height: auto; /*para que escalen sin estrechar de más*/
+}
+
+/******************************************ESTILOS GENERALES *****************************************/
+h1,
+h2,
+h3,
+p {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /*font-family: system-ui, , BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+}
+/*"-apple-system,'Victor Mono',monospace, 'Courier New'"*/
+header {
+  position: sticky; /*no desaparece de la pantalla cuando se da scroll*/
+  top: 0; /*hace que el sticky funcione y se quede estatico el header cuando se baja en la página*/
+  height: 88px;
+  text-align: center;
+  background-color: var(--main-color);
+  color: var(--second-color);
+}
+
+.header h1 {
+  margin: 0 auto; /*para centrar*/
+  text-align: center; /*para centrarlo dentro de su contenedor*/
+}
+
+.section {
+  padding: 4rem 2rem 2rem 2rem;
+  min-height: 100vh; /*Toma el 100% del alto de la pantalla como mínimo*/
+  text-align: center;
+}
+
+/*****************************************MENU HAMBURGUESA* ****************************************/
+.panel-btn {
+  position: fixed;
+  z-index: 999;
+  bottom: 1vh;
+  right: 1vw;
+
+  /*para aplicar background-color*/
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--main-modal-color);
+}
+
+/**********************************MENU MOBILE **********************************/
+
+.panel {
+  position: fixed;
+  z-index: 998;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto; /*Para poder scrollear*/
+  background-color: var(--second-modal-color);
+
+  transition: transform 0.3s ease;
+  transform: translate(0, -300%);
+}
+
+.panel.is-active {
+  transform: translate(0, 0);
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: inherit;
+  height: inherit;
+}
+
+.menu a {
+  padding: 30px;
+  width: 100%;
+  text-decoration: none;
+  color: var(--main-color);
+  align-self: center;
+  text-align: center;
+}
+
+.menu a:hover {
+  background-color: var(--main-modal-color);
+  color: var(--second-modal-color);
+  transition: ease-in-out;
+}
+
+/******************************* RELOJ DIGITAL Y ALARMA ***************************************/
+
+#section1 div {
+  border: solid 1px black;
+  height: 170px;
+}
+
+.clock {
+  display: none;
+}
+
+.time.show {
+  display: block;
+}
+
+.btnS1 {
+  border: 0;
+  border-radius: 0.25rem;
+  background: var(--main-color);
+  color: var(--second-color);
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.7rem 1.6rem;
+  margin: 0.25rem;
+  cursor: pointer;
+}
+
+/******************************* EVENTOS DEL TECLADO ***************************************/
+#stage {
+  display: flex;
+  min-height: 50vh;
+  background-color: #101010;
+}
+
+#ball {
+  margin: auto;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--main-color);
+}
+
+/******************************* CUENTA ATRAS ***************************************/
+
+#countdown-container {
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 30px;
+}
+
+#countdown-container p {
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  font-weight: 900;
+}
+
+/******************************* IR ARRIBA ***************************************/
+#top-btn {
+  position: fixed;
+  bottom: calc(10vh + 4.5vh);
+  right: 0.6vw;
+  font-size: 3.5rem;
+  cursor: pointer;
+
+  outline: 0;
+  border: 0;
+  transform: all 0.3s ease-out;
+}
+
+/******************************* DARK/LIGHT MODE ***************************************/
+
+#darkMode-btn {
+  position: fixed;
+  bottom: 2vh;
+  left: 0.7vw;
+
+  font-size: 2.4rem;
+
+  padding-top: 3px;
+  padding-left: 3px;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--main-modal-color);
+  cursor: pointer;
+
+  outline: 0;
+  border: 0;
+  transform: all 0.3s ease-out;
+}
+
+#darkMode-btn:hover {
+  background-color: var(--second-color);
+}
+
+.darkMode-Theme {
+  /*se aplica con el addClasslist y remove*/
+  background-color: var(--second-color);
+  color: var(--main-color);
+}
+
+/******************************* RESPONSIVE MAPS & YOUTUBE VIDEO ***************************************/
+#section4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 60px;
+}
+
+/******************************* VERIFICACIÓN DE CONEXIÓN ***************************************/
+
+#isOnline {
+  position: fixed;
+  top: 6rem;
+  width: 100%;
+  padding: 0 10px;
+  color: white;
+  font-size: 2.5rem;
+  margin: 0 auto; /*para centrar*/
+  text-align: center; /*para centrarlo dentro de su contenedor*/
+}
+
+/******************************* DETECCIÓN DE LA CÁMARA ***************************************/
+
+/******************************* GEOLOCALIZACIÓN ***************************************/
+
+/******************************* FILTRO DE BÚSQUEDA ***************************************/
+#categoriesContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-evenly;
+}
+
+#searchbarSection10 {
+  font-size: 22px;
+  height: 35px;
+  margin: 10px;
+}
+
+/******************************* SORTEO ***************************************/
+
+#lotteryItems {
+  font-size: 28px;
+}
+
+#lotteryButton {
+  margin-top: 40px;
+  padding: 8px;
+  font-size: 18px;
+}
+
+#lotteryButton:hover {
+  cursor: pointer;
+}
+
+/******************************* CARRUSEL IMAGENES ***************************************/
+#section12 {
+  height: 500px;
+}
+
+#section12-mainContainer {
+  position: relative;
+  z-index: -1;
+}
+
+.img-slider {
+  width: auto; /*70*/
+  height: 70vh;
+  transition: all 2s ease-in-out;
+  align-self: center;
+  margin: auto;
+}
+
+.imgSliderBtn {
+  width: 8vw;
+  height: 10vh;
+  font-size: 5vw;
+  padding: 20vh 0;
+}
+
+.imgSliderBtn:hover {
+  cursor: pointer;
+}
+
+.imgSliderBtn.left {
+  position: absolute;
+  bottom: 10%;
+  left: 91%;
+}
+
+.imgSliderBtn.right {
+  position: absolute;
+  left: 0%;
+  bottom: 10%;
+}
+
+.hidde {
+  display: none;
+}
+
+/* ASIDE PANEL*/
+#aside-panel {
+  display: none;
+}
+
+/*Text Speech*/
+#section14 {
+  display: flex;
+  flex-direction: column;
+}
